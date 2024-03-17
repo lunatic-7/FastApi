@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Notes taking website made with FastApi</h2>
+    <form action="/" method="post">
+        <input type="text" name="title" placeholder="Title" id="title">
+        <input type="text" name="description" placeholder="Description" id="desc">
+        <input type="checkbox" name="important" id="important">
+        <button type="submit">Add note</button> 
+    </form>
+
+    <h3>Notes</h3>
+    <ul>
+        {% for item in newDocs %}
+            <li>{{ item.title }}</li>
+            <p>{{ item.description }}</p>
+            <p>Isimportant: {{ item.important }}</p>
+        {% endfor %}
+</body>
+</html>
